@@ -7,8 +7,20 @@ on:
 permissions:
   contents: write
 jobs:
-  deploy:
+  ubuntu:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: rustup default nightly
+      - run: rustup target add wasm32-unknown-unknown
+      - uses: denoland/setup-deno@v1
+      - run: make run
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Ubuntu Build
+  macOS:
+    needs: ubuntu
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - run: rustup default nightly
