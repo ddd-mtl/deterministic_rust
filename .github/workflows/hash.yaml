@@ -29,4 +29,4 @@ jobs:
       - run: make run
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Ubuntu Build
+          commit_message: MacOS Build
