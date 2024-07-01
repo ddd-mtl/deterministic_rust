@@ -1,3 +1,6 @@
 {
-	"tasks": {}
+  "imports": {
+    "@std/encoding": "jsr:@std/encoding@^0.224.3",
+    "@std/toml": "jsr:@std/toml@^0.224.1"
+  }
 }
