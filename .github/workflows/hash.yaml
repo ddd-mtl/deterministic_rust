@@ -1,8 +1,5 @@
 name: Build to Hash
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 permissions:
   contents: write
@@ -15,9 +12,11 @@ jobs:
       - run: rustup target add wasm32-unknown-unknown
       - uses: denoland/setup-deno@v1
       - run: make build
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Ubuntu Build
   macos:
     runs-on: macos-latest
-    needs: ubuntu
     steps:
       - uses: actions/checkout@v4
       - run: rustup default nightly
@@ -26,4 +25,4 @@ jobs:
       - run: make build
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Built
+          commit_message: Darwin Build
