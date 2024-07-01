@@ -1,8 +1,0 @@
-[alias]
-b = "build"
-
-[build]
-rustflags = [
-	"-C",
-	"metadata=1111111111111111",
-]
