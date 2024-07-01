@@ -15,19 +15,14 @@ jobs:
       - run: rustup target add wasm32-unknown-unknown
       - uses: denoland/setup-deno@v1
       - run: make build
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Ubuntu Build
   macos:
     runs-on: macos-latest
     needs: ubuntu
     steps:
-      - uses: actions/checkout@v4
       - run: rustup default nightly
       - run: rustup target add wasm32-unknown-unknown
       - uses: denoland/setup-deno@v1
       - run: make build
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          skip_dirty_check: true
-          commit_message: MacOS Build
+          commit_message: Built
