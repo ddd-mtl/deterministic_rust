@@ -1,4 +1,4 @@
-name: Build to Hash
+name: Ubuntu
 on:
   workflow_dispatch:
 permissions:

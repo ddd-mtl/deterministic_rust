@@ -1,4 +1,4 @@
-name: Build to Hash
+name: Darwin
 on:
   workflow_dispatch:
 permissions:
