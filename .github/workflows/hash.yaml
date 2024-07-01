@@ -19,6 +19,7 @@ jobs:
     runs-on: macos-latest
     needs: ubuntu
     steps:
+      - uses: actions/checkout@v4
       - run: rustup default nightly
       - run: rustup target add wasm32-unknown-unknown
       - uses: denoland/setup-deno@v1
