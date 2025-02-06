@@ -4,4 +4,12 @@ name = "deterministic_rust"
 version = "0.2.1"
 edition = "2021"
 
+[lib]
+crate-type = [ "cdylib", "rlib" ]
+
 [dependencies]
+serde = { version = "1.0.203", default-features = false }
+hdk = { version = "=0.4.1", features = ["encoding"] }
+
+[profile.release]
+codegen-units = 1
