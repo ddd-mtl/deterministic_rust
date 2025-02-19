@@ -1,4 +1,4 @@
-name: Darwin
+name: Windows
 on:
   workflow_dispatch:
 permissions:
