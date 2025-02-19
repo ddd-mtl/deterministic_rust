@@ -1,15 +1,26 @@
-name: Darwin
+name: hash
 on:
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
-  darwin:
-    runs-on: macos-latest
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - run: rustc --version
+      - run: rustup update nightly
       - run: rustup target add wasm32-unknown-unknown
       - uses: denoland/setup-deno@v1
       - run: make build
       - run: make nbuild
+      - run: ls
+        working-directory: ./output        

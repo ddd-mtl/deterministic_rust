@@ -10,7 +10,7 @@ const b64 = encodeBase64Url(hash)
 
 console.log("\n HASH:", b64);
 
-// await Deno.rename(
-//   "target/wasm32-unknown-unknown/release/deterministic_rust.wasm",
-//   "output/" + Deno.build.os + "/" + b64 + ".wasm",
-// );
+await Deno.rename(
+  "target/wasm32-unknown-unknown/release/deterministic_rust.wasm",
+  "output/" + b64 + "." + Deno.build.os + ".wasm",
+);
