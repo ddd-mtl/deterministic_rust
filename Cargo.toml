@@ -19,9 +19,10 @@ crate-type = [ "cdylib", "rlib" ]
 #holochain_nonce = "0.4.1"
 #holochain_zome_types = { version = "0.4.1", features = ["full"] }
 
+#hdk_derive = "0.4.1"
+
 # NOT OK
-hdk_derive = "0.4.1"
-#hdi = "=0.4.1"
+hdi = "=0.4.1"
 #hdk = { version = "=0.4.1", features = ["encoding"] }
 #hdk = { path = "../holochain/crates/hdk", package = "hdk", features = ["encoding"] }
 
