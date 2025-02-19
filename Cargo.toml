@@ -12,7 +12,7 @@ crate-type = [ "cdylib", "rlib" ]
 #serde = { version = "1.0.203", default-features = false }
 #colored = "2.2.0"
 #holochain_util = "0.4.1"
-holochain_integrity_types = "0.4.1"
+#holochain_integrity_types = "0.4.1"
 
 # UNKNOWN
 #getrandom = { version = "0.2.7", default-features = false, features = ["js"] }
@@ -20,7 +20,7 @@ holochain_integrity_types = "0.4.1"
 #holochain_zome_types = { version = "0.4.1", features = ["full"] }
 
 # NOT OK
-#hdk_derive = "0.4.1"
+hdk_derive = "0.4.1"
 #hdi = "=0.4.1"
 #hdk = { version = "=0.4.1", features = ["encoding"] }
 #hdk = { path = "../holochain/crates/hdk", package = "hdk", features = ["encoding"] }
