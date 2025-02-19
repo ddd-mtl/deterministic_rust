@@ -23,11 +23,11 @@ jobs:
       - run: rustup target add wasm32-unknown-unknown --toolchain nightly
       - uses: denoland/setup-deno@v1
       - run: make build
-      - run: make nbuild
+      #- run: make nbuild
       - run: ls
         working-directory: ./output
-      - run: cargo tree > ./output/tree.txt
+      - run: cargo tree > ./output/tree.${{runner.os}}.txt
       - uses: actions/upload-artifact@master
         with:
-          name: all-artifacts
+          name: all-artifacts-${{runner.os}}
           path: output/
