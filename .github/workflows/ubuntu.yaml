@@ -8,10 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: rustup show
+      - run: rustup rustc --version
       - run: rustup target add wasm32-unknown-unknown
       - uses: denoland/setup-deno@v1
       - run: make build
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Ubuntu Build
+      - run: make nbuild
