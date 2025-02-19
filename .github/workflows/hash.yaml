@@ -26,3 +26,8 @@ jobs:
       - run: make nbuild
       - run: ls
         working-directory: ./output
+      - run: cargo tree > ./output/tree.txt
+      - uses: actions/upload-artifact@master
+        with:
+          name: all-artifacts
+          path: output/
