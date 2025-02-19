@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: rustup default nightly
+      - run: rustup show
       - run: rustup target add wasm32-unknown-unknown
       - uses: denoland/setup-deno@v1
       - run: make build

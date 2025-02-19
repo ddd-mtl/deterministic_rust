@@ -8,8 +8,25 @@ edition = "2021"
 crate-type = [ "cdylib", "rlib" ]
 
 [dependencies]
-serde = { version = "1.0.203", default-features = false }
-hdk = { version = "=0.4.1", features = ["encoding"] }
+# OK
+#serde = { version = "1.0.203", default-features = false }
+#colored = "2.2.0"
+#holochain_util = "0.4.1"
+holochain_integrity_types = "0.4.1"
+
+# UNKNOWN
+#getrandom = { version = "0.2.7", default-features = false, features = ["js"] }
+#holochain_nonce = "0.4.1"
+#holochain_zome_types = { version = "0.4.1", features = ["full"] }
+
+# NOT OK
+#hdk_derive = "0.4.1"
+#hdi = "=0.4.1"
+#hdk = { version = "=0.4.1", features = ["encoding"] }
+#hdk = { path = "../holochain/crates/hdk", package = "hdk", features = ["encoding"] }
 
 [profile.release]
 codegen-units = 1
+
+#[patch.crates-io]
+#getrandom = { git="https://github.com/rust-random/getrandom.git",  rev="cf65e83f9df8954df101320de86f80dccfc6b68a", features = ["js"] }
