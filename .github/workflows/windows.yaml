@@ -14,4 +14,4 @@ jobs:
       - run: make build
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Darwin Build
+          commit_message: Windows Build
