@@ -27,7 +27,7 @@ jobs:
       - run: ls
         working-directory: ./output
       - run: |
-          cp cargo.lock ./output
+          cp Cargo.lock ./output/Cargo.${{runner.os}}.lock
       - run: cargo tree > ./output/tree.${{runner.os}}.txt
       - uses: actions/upload-artifact@master
         with:
