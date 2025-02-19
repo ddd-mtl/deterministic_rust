@@ -26,6 +26,8 @@ jobs:
       #- run: make nbuild
       - run: ls
         working-directory: ./output
+      - run: |
+          cp cargo.lock ./output
       - run: cargo tree > ./output/tree.${{runner.os}}.txt
       - uses: actions/upload-artifact@master
         with:
