@@ -1,7 +1,8 @@
 # --locked
+#	cargo clean
 build:
-	cargo clean
-	cargo build --release --target=wasm32-unknown-unknown -v
+	@echo "Current directory is: $(CURDIR)"
+	CARGO_HOME=registry RUSTFLAGS=--remap-path-prefix=$(CURDIR)/$(CARGO_HOME)=michel cargo build --release --target=wasm32-unknown-unknown -v
 	deno run -A main.ts
 
 nbuild:
